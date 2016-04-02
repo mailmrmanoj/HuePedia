@@ -41,11 +41,11 @@
 app.controller('MainCtrl', function ($scope, AnnyangService, jsonService) {
     $scope.name = 'World';
     $scope.loading = true;
-    jsonService.getjson().then(function (d) {
-        console.log("bigctrl" + d);
-        $scope.avengers = d[0].acteurs;
-        $scope.loading = false;
-    });
+    //jsonService.getjson().then(function (d) {
+    //    console.log("bigctrl" + d);
+    //    $scope.avengers = d[0].acteurs;
+    //    $scope.loading = false;
+    //});
 
     $scope.init = function () {
         $scope.clearResults();
@@ -57,8 +57,9 @@ app.controller('MainCtrl', function ($scope, AnnyangService, jsonService) {
 
         AnnyangService.start();
     };
-    function igniteHello(){
-
+    function igniteHello() {
+        jsonService.postJSON().then(function (data) {
+        })
     }
 
     function checkKeywords(result) {
