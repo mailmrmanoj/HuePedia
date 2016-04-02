@@ -8,12 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script>if (window.location.protocol === "http:") window.location.protocol = "https:";</script>
     <script src="bower_components/annyang/annyang.min.js"></script>
     <script src="bower_components/jquery/jquery.min.js"></script>
-     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
     <script src="bower_components/angularjs/angular.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/annyang-service.js"></script>
@@ -25,39 +28,106 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <h1 class="page-header">Speak Hue</h1>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="page-header">Speak Hue</h1>
 
-            <!-- No results -->
-            <div ng-hide="results.length > 0">
-                <ol>
-                    <li>Click allow ^</li>
-                    <li>Wait for the red light on this Chrome tab</li>
-                    <li>Say some short phrases</li>
-                </ol>
 
-                <p class="help-block">
-                    <i>Tip: more output in the console.</i>
-                </p>
+                    <!-- No results -->
+                    <div ng-hide="results.length > 0">
+                        <ol>
+                            <li>Click allow ^</li>
+                            <li>Wait for the red light on this Chrome tab</li>
+                            <li>Say some short phrases</li>
+                        </ol>
 
-            </div>
+                        <p class="help-block">
+                            <i>Tip: more output in the console.</i>
+                        </p>
 
-            <!-- Has results -->
-            <div ng-show="results.length > 0">
-                <button class="btn btn-default" ng-click="clearResults()">Clear</button>
+                    </div>
+                    <div ng-bind="Message">
+                    </div>
+                    <br/>
+                    <!--<input type="button" value="Start Timer" ng-click="StartTimer()" />-->
+                    <!--<input type="button" value="Stop Timer" ng-click="StopTimer()" />-->
+                    <!-- Has results -->
+                    <div ng-show="results.length > 0">
+                        <button class="btn btn-default" ng-click="clearResults()">Clear</button>
 
-                <hr/>
-{{avengers}}
-                <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="result in results">
-                        <span class="badge">{{ result.date | date : 'EEE MMM, yyyy hh:mm:ss a' }}</span>
-                        {{ result.content }}
-                    </li>
-                </ul>
+                        <hr/>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="result in results">
+                                <span class="badge">{{ result.date | date : 'EEE MMM, yyyy hh:mm:ss a' }}</span>
+                                {{ result.content }}
+                                <span ng-show="result.content='Diwalli'">Hey its diwali....!!!</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="page-header">Crick Hue</h1>
+
+                    <div class="panel panel-info">
+                        <div class="panel-footer">Select options for hue...</div>
+
+                        <div class="panel-body panel-danger">
+                            <div class="row">
+                                <div class="col-md-2">1's <input type="checkbox" ng-model="one"><i></i></div>
+                                <div class="col-md-2">2's <input type="checkbox" ng-model="two"><i></i></div>
+                                <div class="col-md-2">4's <input type="checkbox" ng-model="three"><i></i></div>
+                                <div class="col-md-2">6's <input type="checkbox" ng-model="four"><i></i></div>
+                                <div class="col-md-2">Wicket <input type="checkbox" ng-model="five"><i></i></div>
+                                <div class="col-md-2">Wide <input type="checkbox" ng-model="six"><i></i></div>
+                            </div>
+                            <div class="row">
+                                <div class="panel-footer">Select Ambience</div>
+                                <br>
+                                <div class="form-group" ng-show="one">
+                                    <select class="form-control"ng-model="color" ng-change="setColours(color)">
+                                        <option value="">--Select--</option>
+                                        <option value="1">Celebrate</option>
+                                        <option value="2">Fade Away</option>
+                                        <option value="3">Rejoice</option>
+                                        <option value="4">Dance</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group" ng-show="two">
+                                    <select class="form-control">
+                                        <option>Joy</option>
+                                        <option>Rock</option>
+                                        <option>Party</option>
+                                        <option>Fade Away</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group" ng-show="three">
+                                    <select class="form-control">
+                                        <option>Off</option>
+                                        <option>Glow</option>
+                                        <option>Dance</option>
+                                        <option>Party</option>
+                                    </select>
+                                    <br>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
+
+    </div>
 
 </body>
 </html>
