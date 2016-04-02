@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/HuePedia.iml" filepath="$PROJECT_DIR$/.idea/HuePedia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/huepedia.iml" filepath="$PROJECT_DIR$/.idea/modules/huepedia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/huepedia-build.iml" filepath="$PROJECT_DIR$/.idea/modules/huepedia-build.iml" />
     </modules>
   </component>
 </project>
