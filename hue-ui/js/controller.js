@@ -58,7 +58,7 @@ app.controller('MainCtrl', function ($scope, AnnyangService, jsonService) {
         AnnyangService.start();
     };
     function igniteHello(){
-        
+
     }
 
     function checkKeywords(result) {
