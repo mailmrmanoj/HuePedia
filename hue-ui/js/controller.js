@@ -57,15 +57,19 @@ app.controller('MainCtrl', function ($scope, AnnyangService, jsonService) {
 
         AnnyangService.start();
     };
-    function igniteHello() {
-        jsonService.postJSON().then(function (data) {
+    function igniteHello(id) {
+        jsonService.postJSON(id).then(function (data) {
         })
     }
 
     function checkKeywords(result) {
-        if (result == "hello") {
-            igniteHello();
-        }
+        //if (result == "hello") {
+            igniteHello(2);
+       // }
+    }
+
+    $scope.startTimer=function(){
+        setInterval(function(){ alert("Hello"); }, 3000);
     }
 
     $scope.addResult = function (result) {

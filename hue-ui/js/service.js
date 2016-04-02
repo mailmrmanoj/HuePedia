@@ -19,16 +19,16 @@ app.factory('jsonService', function($http) {
             // Return the promise to the controller
             return promise;
         },
-        postJSON: function() {
+        postJSON: function(id) {
             var req = {
                 method: 'PUT',
-                url: 'http://192.168.1.102/api/ceb443411ac286f16012a5c25fcc5d7/lights/2/state',
+                url: 'http://192.168.1.102/api/ceb443411ac286f16012a5c25fcc5d7/lights/'+id +'/state',
                 headers: {
                     'Content-Type': undefined
                 },
                 data: {
                     "hue": 70000,
-                    "on": true,
+                    "on": false,
                     "bri": 0
                 }
             }
