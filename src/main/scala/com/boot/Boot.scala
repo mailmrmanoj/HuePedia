@@ -11,8 +11,11 @@ import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.RouteConcatenation
 import akka.stream.ActorMaterializer
 import com.dao.HueDAO
+import com.ning.http.client.AsyncHttpClientConfig
 import com.rest.HueRest
 import com.utils.CORSSupport
+import play.api.libs.ws.{WSClient, DefaultWSClientConfig}
+import play.api.libs.ws.ning.{NingWSClient, NingAsyncHttpClientConfigBuilder}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
@@ -20,6 +23,12 @@ trait CoreSystem {
   implicit lazy val system = ActorSystem("ActorSystem")
 
   sys.addShutdownHook(system.shutdown)
+}
+
+trait PlayHelper{
+  val config = new NingAsyncHttpClientConfigBuilder(DefaultWSClientConfig()).build()
+  val builder = new AsyncHttpClientConfig.Builder(config)
+  val wsClient = new NingWSClient(builder.build())
 }
 
 trait RestEndCollection extends RouteConcatenation with CORSSupport with CoreSystem{
