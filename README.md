@@ -67,6 +67,7 @@ it whenever you like.
  
 - Navigate your browser to `http://localhost:8000/app/index.html` to see the app running in your browser.
 - The fastest way to learn how to build apps which control the hue system is to use the simple test web app built into every bridge. This lets you directly input commands and send them to the lights. You can look at the source HTML and JavaScript code for some directions on how to do something different.
+- 
 ### Step 1
 
 First make sure your bridge is connected to your network and is functioning properly. Test that the smartphone app can control the lights on the same network.
