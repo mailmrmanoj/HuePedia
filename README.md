@@ -4,6 +4,10 @@
 
 This application takes the developer through the process of building a web-application using
 angular. The application is based on the **Philips Hue Lightning System*,. Here is a historical reference: [MeetHue](http://www.developers.meethue.com/).
+## Speak Hue-An app that enables you to control the Ohilips Hue with basic commands like "on","off","dance" etc.You can also set the mood to festivals and occassions.
+
+## Crick Hue-An app that helps you to connect to third party cricket api(work in progress) and lets you to configure scores with hue so that you can enjoy your match with hue lightning
+
 
 Each tagged commit is a separate lesson teaching a single aspect of angular.
 
