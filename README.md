@@ -67,10 +67,11 @@ it whenever you like.
  
 - Navigate your browser to `http://localhost:8000/app/index.html` to see the app running in your browser.
 - The fastest way to learn how to build apps which control the hue system is to use the simple test web app built into every bridge. This lets you directly input commands and send them to the lights. You can look at the source HTML and JavaScript code for some directions on how to do something different.
-Step 1
+- 
+### Step 1
 
 First make sure your bridge is connected to your network and is functioning properly. Test that the smartphone app can control the lights on the same network.
-Step 2
+### Step 2
 
 Then you need to discover the IP address of the bridge on your network. You can do this in a few ways.
 
@@ -80,7 +81,7 @@ Then you need to discover the IP address of the bridge on your network. You can 
     Hue App method: Download the official Philips hue app. Connect your phone to the network the hue bridge is on. Start the hue app(iOS described here). Push link connect to the bridge. Use the app to find the bridge and try controlling lights. All working -- Go to the settings menu in the app. Go to My Bridge. Go to Network settings. Switch off the DHCP toggle. The ip address of the bridge will show. Note the ip address, then switch DHCP back on
 
 N.B When you are ready to make a production app you will need to discover the bridge automatically using the Hue Bridge Discovery Guide or the tools provided with the official Philips hue SDKs
-Step 3
+### Step 3
 
 Once you have the address load the test app by visiting the following address in your web browser.
 
