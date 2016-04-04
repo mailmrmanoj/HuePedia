@@ -1,4 +1,4 @@
-# AngularJS HuePedia App
+# AngularJS HuePedia App(Speech Recognition and Crick Hue App)
 
 ## Overview
 
@@ -37,7 +37,7 @@ Each tagged commit is a separate lesson teaching a single aspect of angular.
 
 - npm install
 - bower install
-- run the index file
+- run the index.html file
 
   
 
